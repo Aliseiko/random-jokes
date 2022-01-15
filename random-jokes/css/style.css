@@ -77,6 +77,7 @@ body {
 }
 
 .next-button {
+  margin-bottom: 30px;
   padding: 5px 10px;
   font-family: inherit;
   font-weight: bold;
@@ -88,4 +89,43 @@ body {
 .next-button:hover {
   color: #ffffff;
   background-color: #000;
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border-top: 1px solid #fff;
+}
+
+@media (max-width: 480px) {
+  .footer__container {
+    padding: 5px 10px;
+  }
+}
+
+.footer__copyright {
+  display: flex;
+  line-height: 2.5;
+  gap: 20px;
+}
+
+.rsschool__img {
+  height: 30px;
+  transition: 0.3s;
+  fill: #fff;
+}
+
+.rsschool__img:hover {
+  fill: #808080;
+}
+
+a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #808080;
 }
