@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Prata, serif;
+  color: #fff;
+  background-color: #000;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 2.5;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 34px;
+  }
+}
+
+.chuck-photo {
+  margin-right: 15%;
+  margin-left: 15%;
+  padding: 5px;
+  border: 2px solid #fff;
+}
+
+.chuck-img {
+  display: block;
+  width: 100%;
+}
+
+.chuck-meme-title {
+  font-size: 48px;
+  line-height: 2.5;
+  text-transform: uppercase;
+}
+
+@media (max-width: 605px) {
+  .chuck-meme-title {
+    font-size: calc(100vw * (48 / 640));
+  }
+}
+
+.quote {
+  padding-bottom: 30px;
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .quote {
+    font-size: 20px;
+  }
+}
+
+.next-button {
+  padding: 5px 10px;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  color: #ffffff;
+  background-color: #000;
+}
