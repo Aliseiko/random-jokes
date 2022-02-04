@@ -39,6 +39,33 @@ body {
   }
 }
 
+.lang-switcher {
+  margin-bottom: 20px;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+}
+
+.en,
+.ru {
+  color: #808080;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.en:hover,
+.ru:hover {
+  color: #fff;
+}
+
+.active {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/*.ru {
+  cursor: pointer;
+}*/
+
 .chuck-photo {
   margin-right: 15%;
   margin-left: 15%;

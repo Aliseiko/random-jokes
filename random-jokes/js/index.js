@@ -1,3 +1,5 @@
+let lang = localStorage.getItem('chacklang') || 'en';
+
 function changeImg() {
     document.querySelector('.chuck-img').src = `assets/img/chuck${Math.ceil(Math.random() * 5)}.jpg`;
 }
@@ -14,7 +16,7 @@ function playSound() {
 }
 
 function getMem() {
-    const requestURL = 'https://api.chucknorris.io/jokes/random';
+    const requestURL = (lang === 'en') ? 'https://api.chucknorris.io/jokes/random' : 'https://api.chucknorris.io/jokes/random';
     let request = new XMLHttpRequest(),
         mem;
     request.open('GET', requestURL);
@@ -26,7 +28,22 @@ function getMem() {
     }
 }
 
+function setActiveLangSwitcher() {
+    document.querySelector('.active').classList.remove('active');
+    document.querySelector(`.${lang}`).classList.add('active');
+}
+
+setActiveLangSwitcher();
 getMem();
+
+document.querySelector('.lang-switcher').addEventListener('click', function (event) {
+    if (event.target.classList.contains('en') ||
+        event.target.classList.contains('ru')) {
+        lang = event.target.textContent;
+        localStorage.setItem('chacklang', lang);
+        setActiveLangSwitcher();
+    }
+})
 
 document.querySelector('.next-button').onclick = function () {
     getMem();
