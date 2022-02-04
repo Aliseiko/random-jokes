@@ -10,19 +10,13 @@ function playSound() {
     sound.play();
 }
 
-function getMem() {
+async function getMem() {
     const requestURL = (lang === 'en') ? 'https://api.chucknorris.io/jokes/random' : './assets/json/quotes.json';
-    let request = new XMLHttpRequest(),
-        mem;
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-    request.onload = function () {
-        mem = (lang === 'en') ?
-            request.response.value :
-            request.response[Math.floor(request.response.length * Math.random())].text;
-        document.querySelector('.quote').textContent = mem;
-    }
+    const res = await fetch(requestURL);
+    const data = await res.json();
+    document.querySelector('.quote').textContent = (lang === 'en') ?
+        data.value :
+        data[Math.floor(data.length * Math.random())].text;
 }
 
 function setActiveLangSwitcher() {
