@@ -45,6 +45,12 @@ body {
   font-size: 20px;
 }
 
+@media (max-width: 400px) {
+  .lang-switcher {
+    font-size: 16px;
+  }
+}
+
 .en,
 .ru {
   color: #808080;
@@ -61,10 +67,6 @@ body {
   text-decoration: underline;
   color: #fff;
 }
-
-/*.ru {
-  cursor: pointer;
-}*/
 
 .chuck-photo {
   margin-right: 15%;
