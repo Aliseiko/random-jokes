@@ -2,9 +2,15 @@ function changeImg() {
     document.querySelector('.chuck-img').src = `assets/img/chuck${Math.ceil(Math.random() * 5)}.jpg`;
 }
 
-function changeBackground() {
+/*function changeBackground() {
     const colors = ['black', '#48036F', '#261300', '#5b0000', '#200772'];
     document.body.style.backgroundColor = colors[Math.floor(Math.random() * 5)];
+}*/
+
+function playSound() {
+    const sound = document.querySelector('.audio');
+    sound.currentTime = 0;
+    sound.play();
 }
 
 function getMem() {
@@ -25,7 +31,8 @@ getMem();
 document.querySelector('.next-button').onclick = function () {
     getMem();
     changeImg();
-    changeBackground();
+    playSound();
+    // changeBackground();
 }
 
 console.log('Самооценка:\n' +
