@@ -16,14 +16,16 @@ function playSound() {
 }
 
 function getMem() {
-    const requestURL = (lang === 'en') ? 'https://api.chucknorris.io/jokes/random' : 'https://api.chucknorris.io/jokes/random';
+    const requestURL = (lang === 'en') ? 'https://api.chucknorris.io/jokes/random' : './assets/json/quotes.json';
     let request = new XMLHttpRequest(),
         mem;
     request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
     request.onload = function () {
-        mem = request.response.value;
+        mem = (lang === 'en') ?
+            request.response.value :
+            request.response[Math.floor(request.response.length * Math.random())].text;
         document.querySelector('.quote').textContent = mem;
     }
 }
@@ -42,6 +44,7 @@ document.querySelector('.lang-switcher').addEventListener('click', function (eve
         lang = event.target.textContent;
         localStorage.setItem('chacklang', lang);
         setActiveLangSwitcher();
+        getMem();
     }
 })
 
