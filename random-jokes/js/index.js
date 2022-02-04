@@ -10,7 +10,7 @@ function playSound() {
     sound.play();
 }
 
-function getMem() {
+/*function getMem() {
     const requestURL = (lang === 'en') ? 'https://api.chucknorris.io/jokes/random' : './assets/json/quotes.json';
     let request = new XMLHttpRequest(),
         mem;
@@ -23,6 +23,15 @@ function getMem() {
             request.response[Math.floor(request.response.length * Math.random())].text;
         document.querySelector('.quote').textContent = mem;
     }
+}*/
+
+async function getMem() {
+    const requestURL = (lang === 'en') ? 'https://api.chucknorris.io/jokes/random' : './assets/json/quotes.json';
+    const res = await fetch(requestURL);
+    const data = await res.json();
+    document.querySelector('.quote').textContent = (lang === 'en') ?
+        data.value :
+        data[Math.floor(data.length * Math.random())].text;
 }
 
 function setActiveLangSwitcher() {
