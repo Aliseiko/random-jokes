@@ -1,2 +1,2 @@
-# aliseiko-JSFEPRESCHOOL
-Private repository for @aliseiko
+# random-jokes
+random-jokes RSS project
